@@ -1,28 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import SupplierForm from './components/SupplierForm';
+import FacilitatorForm from './components/FacilitatorForm';
 
 class App extends Component {
+  state = {
+    supplierClick: false,
+    facilitatorClick: false,
+  };
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="banner">
+        <h1>bop IT</h1>
+        <button onClick={this.handleSupplier}>I'm a supplier</button>
+        {this.state.supplierClick && <SupplierForm />}
+        <button onClick={this.handleFacilitator}>I'm a facilitator</button>
+        {this.state.facilitatorClick && <FacilitatorForm />}
       </div>
     );
   }
+
+  handleSupplier = () => {
+    const { supplierClick } = this.state;
+    this.setState({ supplierClick: !supplierClick });
+  };
+
+  handleFacilitator = () => {
+    const { facilitatorClick } = this.state;
+    this.setState({ facilitatorClick: !facilitatorClick });
+  };
 }
 
 export default App;
