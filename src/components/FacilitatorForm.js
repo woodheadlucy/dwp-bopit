@@ -14,31 +14,43 @@ class FacilitatorForm extends Component {
         <h1>Facilitator form</h1>
         <form className="facilForm" onSubmit={this.handleSubmit}>
           <br />
-          <label for="contactName">Contact name:</label>
+          <label for="contactName" class="standardlayout">
+            Contact name:
+          </label>
           <input
+            class="standardlayout"
             onChange={this.handleChange}
             name="contactName"
             value={this.state.contactName}
           />{' '}
           <br />
-          <label for="need">I need:</label>
+          <label for="need" class="standardlayout">
+            I need:
+          </label>
           <input
+            class="standardlayout"
             onChange={this.handleChange}
             type="text"
             name="need"
             value={this.state.need}
           />
           <br />
-          <label for="quantity">Quantity:</label>
+          <label for="quantity" class="standardlayout">
+            Quantity:
+          </label>
           <input
+            class="standardlayout"
             onChange={this.handleChange}
             type="text"
             name="quantity"
             value={this.state.quanitity}
           />
           <br />
-          <label for="location">Location:</label>
+          <label for="location" class="standardlayout">
+            Location:
+          </label>
           <input
+            class="standardlayout"
             onChange={this.handleChange}
             type="text"
             name="location"
