@@ -69,26 +69,27 @@ class SupplierForm extends Component {
     this.setState({ [name]: value });
   };
 
+  handleSubmit = event => {
+    event.preventDefault();
+    alert(this.state.companyName + this.state.contactName);
+    /* event.preventDefault(); */
+    const { companyName, contactName, donate, quantity } = this.state;
+    mg.messages().send('HELLO!!!!', function(error, body) {
+      console.log(body, '<<<<<');
+      alert(body);
+    });
+  };
   // handleSubmit = event => {
   //   event.preventDefault();
   //   const { companyName, contactName, donate } = this.state;
   // };
 
-  handleSubmit = data => {
-    mg.messages().send(data, function(error, body) {
-      console.log(body, '<<<<<');
-      alert(body);
-      // fetch('/subscribe', {
-      //   method: 'POST',
-      //   body: JSON.stringify(data),
-      // })
-      //   .then(res => res.json())
-      //   .then(json => {
-      //     console.log(json);
-      //     // Do whatever you would like, display a thank you message, or inform the user if they are already a member
-      //   });
-    });
-  };
+  // handleSubmit = data => {
+  //   mg.messages().send(data, function(error, body) {
+  //     console.log(body, '<<<<<');
+  //     alert(body);
+  //   });
+  // };
 }
 
 export default SupplierForm;

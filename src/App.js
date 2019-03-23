@@ -3,15 +3,19 @@ import './App.css';
 import SupplierForm from './components/SupplierForm';
 import FacilitatorForm from './components/FacilitatorForm';
 import Sidebar from './components/Sidebar';
+import SignUpSupplier from './components/SignUpSupplier';
+import SignUpFacilitator from './components/SignUpFacilitator';
 
 class App extends Component {
   state = {
     supplierClick: false,
     facilitatorClick: false,
+    signupFacilitatorClick: false,
+    signupSupplierClick: false,
   };
   render() {
     return (
-      <div>
+      <div className="App">
         <h1 className="topBanner">GOV.UK</h1>
         <div className="main">
           <h1>Welcome to bop-IT</h1>
@@ -29,7 +33,14 @@ class App extends Component {
             facilitators who are in direct contact with people in need. e.g DWP
             Work Coaches, Teachers, Social Care workers etc.
           </p>
-
+          <button className="button" onClick={this.handleSignUpFacilitator}>
+            sign up to be a facilitator
+          </button>
+          {this.state.signupFacilitatorClick && <SignUpFacilitator />}
+          <button className="button" onClick={this.handleFacilitator}>
+            Request devices >
+          </button>
+          {this.state.facilitatorClick && <FacilitatorForm />}
           <p>
             <strong>Supplier:</strong>
           </p>
@@ -39,15 +50,18 @@ class App extends Component {
             usually. This process is green and there is no charge for using
             bop-IT.
           </p>
+          <button className="button" onClick={this.handleSignUpSupplier}>
+            I'd like to register my company
+          </button>
+          {this.state.signupSupplierClick && <SignUpSupplier />}
+          <button className="button" onClick={this.handleSupplier}>
+            Donate devices >
+          </button>
+          {this.state.supplierClick && <SupplierForm />}
         </div>
-        <button className="button" onClick={this.handleSupplier}>
-          I'm a supplier >
-        </button>
-        {this.state.supplierClick && <SupplierForm />}
-        <button className="button" onClick={this.handleFacilitator}>
-          I'm a facilitator >
-        </button>
-        {this.state.facilitatorClick && <FacilitatorForm />}
+        <div className="sidebar">
+          <p>SIDEBAR</p>
+        </div>{' '}
       </div>
     );
   }
@@ -60,6 +74,16 @@ class App extends Component {
   handleFacilitator = () => {
     const { facilitatorClick } = this.state;
     this.setState({ facilitatorClick: !facilitatorClick });
+  };
+
+  handleSignUpSupplier = () => {
+    const { signupSupplierClick } = this.state;
+    this.setState({ signupSupplierClick: !signupSupplierClick });
+  };
+
+  handleSignUpFacilitator = () => {
+    const { signupFacilitatorClick } = this.state;
+    this.setState({ signupFacilitatorClick: !signupFacilitatorClick });
   };
 }
 

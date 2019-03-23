@@ -1,19 +1,10 @@
 .App {
-  display: grid;
+  /* display: grid; */
   height: 100vh;
-  grid-template: 1fr 7fr/ 7fr 1fr;
+  /* grid-template: 1fr 7fr/ 6fr 2fr;
   grid-template-areas:
     'header sidebar'
-    'forms sidebar';
-}
-
-.main {
-  margin: 10px;
-  padding: 10px;
-}
-
-.sidebar {
-  grid-area: sidebar;
+    'forms sidebar'; */
 }
 .topBanner {
   grid-area: header;
@@ -21,15 +12,21 @@
   color: white;
   padding: 20px;
 }
+.main {
+  margin: 10px;
+  padding: 10px;
+  width: 70%;
+  border: 1px solid blue;
+  float: left;
+}
 
-.banner {
-  grid-area: forms;
-  display: flex;
-  flex-direction: column;
-  margin-left: 400px;
-  margin-right: 400px;
-  margin-top: 40px;
-  padding: 50px;
+.sidebar {
+  margin-top: 10px;
+  margin-right: 10px;
+  grid-area: sidebar;
+  width: 25%;
+  border: 1px solid pink;
+  float: right;
 }
 
 .button {
