@@ -4,10 +4,9 @@ h1 {
 
 .facilForm,
 .suppForm {
-  padding: 40px;
+  padding: 10px;
+  margin: none;
 
-  /* display: flex;
-  flex-direction: column; */
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
 }

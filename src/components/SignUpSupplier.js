@@ -9,10 +9,7 @@ class SignUpSupplier extends Component {
   render() {
     return (
       <div className="mainForm">
-        <h1>Supplier form</h1>
-        <div>
-          <p>Please fill in the below...</p>
-        </div>{' '}
+        <h1>Register your company</h1>
         <form className="suppForm" onSubmit={this.handleSubmit}>
           <label for="companyName">Company name:</label>
           <input
@@ -27,6 +24,17 @@ class SignUpSupplier extends Component {
             name="contactName"
             value={this.state.contactName}
           />{' '}
+          <br />
+          <label for="email" class="standardlayout">
+            Email:
+          </label>
+          <input
+            class="standardlayout"
+            onChange={this.handleChange}
+            type="text"
+            name="email"
+            value={this.state.email}
+          />
           <br />
           <button className="button">Register</button>
         </form>{' '}

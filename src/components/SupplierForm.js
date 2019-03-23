@@ -24,10 +24,7 @@ class SupplierForm extends Component {
   render() {
     return (
       <div className="mainForm">
-        <h1>Supplier form</h1>
-        <div>
-          <p>Please fill in the below...</p>
-        </div>{' '}
+        <h1>Donate devices</h1>
         <form className="suppForm" onSubmit={this.handleSubmit}>
           <label for="companyName">Company name:</label>
           <input
@@ -42,6 +39,17 @@ class SupplierForm extends Component {
             name="contactName"
             value={this.state.contactName}
           />{' '}
+          <br />
+          <label for="email" class="standardlayout">
+            Email:
+          </label>
+          <input
+            class="standardlayout"
+            onChange={this.handleChange}
+            type="text"
+            name="email"
+            value={this.state.email}
+          />
           <br />
           <label for="donate">I can donate:</label>
           <input

@@ -3,16 +3,15 @@ import './Form.css';
 
 class SignUpFacilitator extends Component {
   state = {
-    companyName: '',
-    contactName: '',
+    name: '',
+    job: '',
+    email: '',
+    location: '',
   };
   render() {
     return (
       <div className="mainForm">
-        <h1>Facilitator sign up</h1>
-        <div>
-          <p>Please fill in the below...</p>
-        </div>{' '}
+        <h1>Sign up as a facilitator</h1>
         <form className="facilForm" onSubmit={this.handleSubmit}>
           <label for="contactName" class="standardlayout">
             Contact name:
@@ -20,30 +19,31 @@ class SignUpFacilitator extends Component {
           <input
             class="standardlayout"
             onChange={this.handleChange}
-            name="contactName"
+            type="text"
+            name="name"
             value={this.state.contactName}
           />{' '}
           <br />
-          <label for="need" class="standardlayout">
-            I need:
+          <label for="job" class="standardlayout">
+            Job title:
           </label>
           <input
             class="standardlayout"
             onChange={this.handleChange}
             type="text"
-            name="need"
-            value={this.state.need}
+            name="job"
+            value={this.state.job}
           />
           <br />
-          <label for="quantity" class="standardlayout">
-            Quantity:
+          <label for="email" class="standardlayout">
+            Email:
           </label>
           <input
             class="standardlayout"
             onChange={this.handleChange}
             type="text"
-            name="quantity"
-            value={this.state.quanitity}
+            name="email"
+            value={this.state.email}
           />
           <br />
           <label for="location" class="standardlayout">

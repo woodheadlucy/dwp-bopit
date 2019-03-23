@@ -5,17 +5,14 @@ class FacilitatorForm extends Component {
   state = {
     contactName: '',
     need: '',
-    quanitity: '',
+
+    quantity: '',
     location: '',
   };
   render() {
     return (
       <div className="mainForm">
-        <h1>Facilitator form</h1>
-        <div>
-          <p>Please fill in the below...</p>
-        </div>
-
+        <h1>Request devices</h1>
         <form
           className="facilForm"
           action="https://us20.api.mailchimp.com/post?u=XXXXXXX&amp;id=XXXXXX"
@@ -27,10 +24,22 @@ class FacilitatorForm extends Component {
           </label>
           <input
             class="standardlayout"
+            type="text"
             onChange={this.handleChange}
             name="contactName"
             value={this.state.contactName}
           />{' '}
+          <br />
+          <label for="email" class="standardlayout">
+            Email:
+          </label>
+          <input
+            class="standardlayout"
+            onChange={this.handleChange}
+            type="text"
+            name="email"
+            value={this.state.email}
+          />
           <br />
           <label for="need" class="standardlayout">
             I need:
@@ -49,7 +58,7 @@ class FacilitatorForm extends Component {
           <input
             class="standardlayout"
             onChange={this.handleChange}
-            type="text"
+            type="number"
             name="quantity"
             value={this.state.quanitity}
           />
