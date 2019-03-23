@@ -10,7 +10,7 @@ class FacilitatorForm extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="mainForm">
         <h1>Facilitator form</h1>
         <div>
           <p>Please fill in the below...</p>
@@ -75,9 +75,21 @@ class FacilitatorForm extends Component {
     this.setState({ [name]: value });
   };
 
-  handleSubmit = event => {
-    event.preventDefault();
-    const { contactName, need } = this.state;
+  // handleSubmit = event => {
+  //   event.preventDefault();
+  //   const { contactName, need } = this.state;
+  // };
+
+  handleSubmit = data => {
+    fetch('/subscribe', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    })
+      .then(res => res.json())
+      .then(json => {
+        console.log(json);
+        // Do whatever you would like, display a thank you message, or inform the user if they are already a member
+      });
   };
 }
 

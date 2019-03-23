@@ -1,12 +1,20 @@
 .App {
   display: grid;
   height: 100vh;
-  grid-template: 1fr 7fr/ 1fr;
+  grid-template: 1fr 7fr/ 7fr 1fr;
   grid-template-areas:
-    'header'
-    'forms';
+    'header sidebar'
+    'forms sidebar';
 }
 
+.main {
+  margin: 10px;
+  padding: 10px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
 .topBanner {
   grid-area: header;
   background-color: black;
