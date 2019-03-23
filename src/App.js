@@ -10,11 +10,16 @@ class App extends Component {
   };
   render() {
     return (
-      <div className="banner">
-        <h1>bop IT</h1>
-        <button onClick={this.handleSupplier}>I'm a supplier</button>
+      <div>
+        <h1 className="topBanner">GOV.UK</h1>
+
+        <button className="button" onClick={this.handleSupplier}>
+          I'm a supplier >
+        </button>
         {this.state.supplierClick && <SupplierForm />}
-        <button onClick={this.handleFacilitator}>I'm a facilitator</button>
+        <button className="button" onClick={this.handleFacilitator}>
+          I'm a facilitator >
+        </button>
         {this.state.facilitatorClick && <FacilitatorForm />}
       </div>
     );

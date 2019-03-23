@@ -1,8 +1,38 @@
+.App {
+  display: grid;
+  height: 100vh;
+  grid-template: 1fr 7fr/ 1fr;
+  grid-template-areas:
+    'header'
+    'forms';
+}
+
+.topBanner {
+  grid-area: header;
+  background-color: black;
+  color: white;
+  padding: 20px;
+}
+
 .banner {
+  grid-area: forms;
   display: flex;
   flex-direction: column;
   margin-left: 400px;
   margin-right: 400px;
   margin-top: 40px;
   padding: 50px;
+}
+
+.button {
+  background-color: #4caf50; /* Green */
+  border: 2px solid black;
+  border-width: 0 0 2px 0;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
 }

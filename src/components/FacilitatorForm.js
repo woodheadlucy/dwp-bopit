@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './FacilitatorForm.css';
+import Mailchimp from 'react-mailchimp-form';
 
 class FacilitatorForm extends Component {
   state = {
@@ -12,7 +13,44 @@ class FacilitatorForm extends Component {
     return (
       <div>
         <h1>Facilitator form</h1>
-        <form className="facilForm" onSubmit={this.handleSubmit}>
+        <div>
+          <p>Please fill in the below...</p>
+        </div>
+
+        {/* <Mailchimp
+          action="https://<YOUR-USER>.us16.list-manage.com/subscribe/post?u=XXXXXXXXXXXXX&amp;id=XXXXXX"
+          fields={[
+            {
+              name: 'CONTACT_NAME',
+              placeholder: 'Your name',
+              type: 'text',
+              required: true,
+            },
+            {
+              name: 'EMAIL',
+              placeholder: 'Email',
+              type: 'email',
+              required: true,
+            },
+            {
+              name: 'ITEMS_NEEDED',
+              placeholder: 'What do you need?',
+              type: 'text',
+              required: true,
+            },
+            {
+              name: 'QUANTITY',
+              placeholder: 'How many do you need?',
+              type: 'number',
+              required: true,
+            },
+          ]}
+        /> */}
+        <form
+          className="facilForm"
+          action="https://us20.api.mailchimp.com/post?u=XXXXXXX&amp;id=XXXXXX"
+          onSubmit={this.handleSubmit}
+        >
           <br />
           <label for="contactName" class="standardlayout">
             Contact name:
