@@ -38,6 +38,8 @@ h1 {
   box-sizing: border-box;
   vertical-align: top;
   margin: 20px;
+  width: 250px;
+  height: 40px;
 }
 label {
   display: block;

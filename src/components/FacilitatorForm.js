@@ -5,7 +5,7 @@ class FacilitatorForm extends Component {
   state = {
     contactName: '',
     need: '',
-
+    email: '',
     quantity: '',
     location: '',
   };
@@ -15,7 +15,7 @@ class FacilitatorForm extends Component {
         <h1>Request devices</h1>
         <form
           className="facilForm"
-          action="https://us20.api.mailchimp.com/post?u=XXXXXXX&amp;id=XXXXXX"
+          // action="https://us20.api.mailchimp.com/post?u=XXXXXXX&amp;id=XXXXXX"
           onSubmit={this.handleSubmit}
         >
           <br />

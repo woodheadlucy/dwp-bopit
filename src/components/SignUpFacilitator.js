@@ -12,7 +12,11 @@ class SignUpFacilitator extends Component {
     return (
       <div className="mainForm">
         <h1>Sign up as a facilitator</h1>
-        <form className="facilForm" onSubmit={this.handleSubmit}>
+        <form
+          className="facilForm"
+          //   action="https://us20.api.mailchimp.com/post?u=XXXXXXX&amp;id=XXXXXX"
+          onSubmit={this.handleSubmit}
+        >
           <label for="contactName" class="standardlayout">
             Contact name:
           </label>
@@ -72,16 +76,25 @@ class SignUpFacilitator extends Component {
   //   const { contactName, need } = this.state;
   // };
 
-  handleSubmit = data => {
-    fetch('/subscribe', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    })
-      .then(res => res.json())
-      .then(json => {
-        console.log(json);
-        // Do whatever you would like, display a thank you message, or inform the user if they are already a member
-      });
+  handleSubmit = event => {
+    event.preventDefault();
+
+    this.setState({
+      name: '',
+      job: '',
+      email: '',
+      location: '',
+    });
+    alert('You have successfully signed up!');
+    // fetch('/subscribe', {
+    //   method: 'POST',
+    //   body: JSON.stringify(data),
+    // })
+    //   .then(res => res.json())
+    //   .then(json => {
+    //     console.log(json);
+    //     // Do whatever you would like, display a thank you message, or inform the user if they are already a member
+    //   });
   };
 }
 
