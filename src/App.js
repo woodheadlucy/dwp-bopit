@@ -60,7 +60,10 @@ class App extends Component {
           {this.state.supplierClick && <SupplierForm />}
         </div>
         <div className="sidebar">
-          <p>SIDEBAR</p>
+          <h2>Related content</h2>
+          <a href="https://www.leeds.gov.uk/leisure/libraries/learn-in-the-library">
+            Learn in the library
+          </a>
         </div>{' '}
       </div>
     );

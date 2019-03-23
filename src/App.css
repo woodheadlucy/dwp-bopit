@@ -16,7 +16,7 @@
   margin: 10px;
   padding: 10px;
   width: 70%;
-  border: 1px solid blue;
+
   float: left;
 }
 
@@ -25,7 +25,7 @@
   margin-right: 10px;
   grid-area: sidebar;
   width: 25%;
-  border: 1px solid pink;
+
   float: right;
 }
 
